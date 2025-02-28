@@ -8,4 +8,3 @@ def g(a,n):
 
 print (min([s for s in range(0, 20) if g(s, 0)]))
 print (max([s for s in range(0, 20) if g(s, 0)])) 
-#ahhahah
