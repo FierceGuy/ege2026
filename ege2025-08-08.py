@@ -24,7 +24,7 @@ for char1 in alphabet:
                     word = char1 + char2 + char3 + char4 + char5
 
                     if char5 == "Ь" and number <= 387:
-                    counter += 1
+                        counter += 1
 
                     number +=1
 
