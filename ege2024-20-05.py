@@ -9,4 +9,3 @@ def game(hill_1, hill_2, move):
 for S in range(0, 58): # перебираем числа до 58
     if game(6, S, 0): # в первой куче 6 камней, во второй S
         print(S)
-   
