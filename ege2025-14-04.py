@@ -1,3 +1,7 @@
+#  Значение арифметического выражения 6**900 + 6**10 – х, где х – натуральное число, не превышающее 10000, 
+# записали в системе счисления с основанием 6. Определите максимальное значение x, при котором данная
+#  запись содержит одинаковое количество цифр «3» и «5».
+
 def convert(number, system):
     result = ""
     while number != 0:
@@ -5,14 +9,12 @@ def convert(number, system):
         number = number // system
     return result[::-1]
 
-max0 = 0
-
-cool = 7**400 + 7**300
-for x in range(7**400, 0, -1):
-    res = cool - x
-    res = convert(res, 7)
-    lol =  res.count('0')
-    if lol > max0:
-        max0 = lol
-    print (lol)
-    break
+число = 6**900 + 6**10
+for x in range(10000, 0, -1):
+    res = число - x
+    res = convert(res, 6)
+    тройки =  res.count('3')
+    пятёрки =  res.count('5')
+    if тройки == пятёрки:
+        print(x)
+        break
