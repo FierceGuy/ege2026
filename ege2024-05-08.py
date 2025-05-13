@@ -7,24 +7,33 @@
 #  15015012 = 352716, а для исходного числа 275 = 1AB12 это число 291AB12 = 57299. Укажите такое число N, после обработки которого с помощью этого алгоритма
 #  получится наибольшее число R, которое меньше 58000. 
 
-alphabet = "0123456789ABCDEF"
+alphabet = "0123456789AB"
 # print(alphabet[6])
 # print(alphabet[12])
 
 def convert(number, system):
     result =  ''
-    while number > 0:
+    while number != 0:
         result += alphabet[number % system]
         number = number // system
     return result[::-1]
 
-# print(convert(758, 10))
-n = 24
 
-num =convert(n, 12)
-b = n % 12
-if b == 0:
-    num +=  num[:-3]
-else:
-    num = convert(b*3, 12) + num
+maxR = 0
+bestN = 0
 
+for n in range(143, 1000):
+    r = convert(n, 12)
+    b = n % 12
+    if b == 0:
+        r +=  r[-3:]
+    else:
+        r = convert(b*3, 12) + r
+
+
+    R = int(r, 12)
+    if R < 58000 and R > maxR:
+        maxR = R
+        bestN = n
+
+print(bestN)
