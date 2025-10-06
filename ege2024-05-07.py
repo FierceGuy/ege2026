@@ -18,6 +18,6 @@ def f(N):
 
     R = convert_to_base(number, system)
     if N%2 == 0:
-        R = '2' + R + 2*R[:1]
+        R = '2' + R + 2*R[-1:]
     else:
         R = 2*R[1:] + R + "2"
