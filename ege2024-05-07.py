@@ -6,9 +6,9 @@
 # Полученная таким образом запись является троичной записью искомого числа R. Например, для исходного числа 14 = 1123 результатом является 2112113 = 616. Укажите минимальное значение большее 100, которое может получиться в результате работы алгоритма.
 
 alphabet = "012"
+N = 14
 def f(N):
     number = N
-    system = 3
     def convert_to_base(number, system):
         result = ''
         while number != 0:
@@ -16,8 +16,11 @@ def f(N):
             number //= system
         return result[::-1]
 
-    R = convert_to_base(number, system)
+    R = convert_to_base(number, 3)
     if N%2 == 0:
         R = '2' + R + 2*R[-1:]
     else:
-        R = 2*R[1:] + R + "2"
+        R = 2*R[-1:] + R + "2"
+
+R = f(N)
+print(int(R))
