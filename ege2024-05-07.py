@@ -7,18 +7,23 @@
 
 alphabet = "012"
 def convert_to_base(number, system):
-        result = ''
-        while number != 0:
-            result += alphabet[number % system]
-            number //= system
-        return result[::-1]
-N = 14
+    result = ''
+    while number != 0:
+        result += alphabet[number % system]
+        number //= system
+    return result[::-1]
 
-for R in range(100, 1000):
-    R = convert_to_base(N, 3)
-    if N%2 == 0:
-        R = '2' + R + 2*R[-1:]
-    else:
-        R = 2*R[-1:] + R + "2"
+rlist=[]
+N = 14
+# for R in range(100, 1000):
+# R = convert_to_base(N, 3)
+R = 1123
+R = str(R)
+if N%2 == 0:
+    R = '2' + R + str(2*int(R[-1:]))
+else:
+    R = str(2*int(R[-1:])) + R + "2"
 
 print(R)
+
+print(2*str(N)[-1:])
