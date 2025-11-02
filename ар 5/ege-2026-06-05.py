@@ -1,7 +1,7 @@
 from turtle import *
-
 tracer(0)
 k = 10
+
 pd()
 for _ in range(9):
     forward(22*k)
@@ -19,10 +19,11 @@ for _ in range(9):
     right(90)
     forward(75*k)
     right(90)
+pu()
+
 for x in range(-100, 100):
     for y in range(-100, 100):
-        goto(x*k, y * k)
-        dot(2)
-
+        goto(x*k, y*k)
+        dot(5)
 
 done()
