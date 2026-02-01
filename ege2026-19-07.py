@@ -6,5 +6,5 @@ def x(z, v):
         return all (ng)
     return any (ng)
 
-print (len([s for s in range(0, 31) if x(s, 0)]))
+print (len([s for s in range(0, 31) if x(s, 0)])) 
 
